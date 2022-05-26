@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,500;0,700;1,300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="top-banner">
+        <div id="lBannerLink"><a href= "#contactForm">Contact</a></div>
+        <div id="midBanner"><a href= "Index.html">Elderflower Field<br> By Marlay</a></div>
+        <div id="rBannerLink"><a href = "https://www.instagram.com/elderflowerfield/">Instagram</a></div>
+    </header>
+    <button onclick="topFunction()" id="topBtn" title="Go to Top">&#8963;</button>
+    <div class="main-image">
+        <div class="image-text">Local Flower Farm supplying seasonal fresh cut flowers to the Forster Tuncurry region</div>
+    </div>
+    <div class="main-copy">
+        <h2 id="AboutUs"> Headline for blurb about us</h2>
+        <p1>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+        </p1>
+        <br>
+        <h2>Gallery</h2>
+        <p>Blurb about gallery</p>
+    </div>
+    <div class="gallery">
+        <img class="ImgThumbnail" src="Image/american_basket_flower.jpg" alt="American Basket FLower">
+        <img class="ImgThumbnail" src="Image/Bouquet.jpg">
+        <img class="ImgThumbnail" src="Image/chinese_aster.jpg">
+        <img class="ImgThumbnail" src="Image/cosmos_2.jpg">
+        <img class="ImgThumbnail" src="Image/cosmos_3.JPG">
+        <img class="ImgThumbnail" src="Image/cosmos_4.jpg">
+        <img class="ImgThumbnail" src="Image/globe_amaranth.jpg">
+        <img class="ImgThumbnail" src="Image/zinnia.jpg">
+        <div class="modal">
+            <span class="close">×</span>
+            <img class="modalImage" id="img01">
+        </div>
+        <br>
+        <div id=contactForm>
+            <h2>Contact Marlay</h2>
+            <p>I'm happy to fulfill any personalised orders, just enquire below.</p>
+            <p><img src="Image/Icons/email.png" class=Icon>elderflowerfield@gmail.com</p>
+            <p><img src="Image/Icons/call.png" class=Icon>0400 856 945</p>
+            <p><img src="Image/Icons/location.png" class=Icon>1130 The Lakes Way, Darawank, Forster 2428</p>
+        </div>
+        <footer>
+            <a href="https://www.instagram.com/elderflowerfield/">To see our freshest picks follow us on Instagram</a>
+        </footer>
+</body>
+<script>
+
+    let modalEle = document.querySelector(".modal");
+    let modalImage = document.querySelector(".modalImage");
+    Array.from(document.querySelectorAll(".ImgThumbnail")).forEach(item => {
+        item.addEventListener("click", event => {
+            modalEle.style.display = "block";
+            modalImage.src = event.target.src;
+            topButton.style.display = "none";
+        });
+    });
+    document.querySelector(".close").addEventListener("click", () => {
+        modalEle.style.display = "none";
+        topButton.style.display = "block";
+    });
+
+    topBanner = document.getElementById("top-banner");
+    topButton = document.getElementById("topBtn");
+    window.onscroll = function () { scrollFunction() };
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            topButton.style.display = "block";
+            topBanner.style.display = "none"
+        } else {
+            topButton.style.display = "none";
+            topBanner.style.display = "flex";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</html>
